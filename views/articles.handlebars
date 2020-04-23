@@ -1,0 +1,31 @@
+<section class="section">
+    <div class="container">
+
+        {{#if user}}
+        
+            <img src="{{article.image}}" alt="placeholder image">
+            <h1 class="title">{{article.title}}</h1>
+            <p>{{{article.content}}}</p>
+            <p>Publié par {{article.author}}, le {{moment createDate format="DD-MM-YY"}}</p>
+
+        
+
+        <button class="button is-primary is-outlined"><a href="/articles/edit/{{article._id}}">Modifier
+                l'article</a></button>
+
+
+
+
+        <form action="/articles/{{article._id }}/?_method=DELETE" method="POST">
+            <button class="button is-danger is-light">Supprimer l'article</button>
+        </form>
+
+        {{else}}
+        <img src="{{article.image}}" alt="placeholder image">
+        <h1 class="title">{{article.title}}</h1>
+        <p>{{{article.content}}}</p>
+        <p>Publié par {{article.author}}, le {{moment createDate format="DD-MM-YY"}}</p>
+
+        {{/if}}
+    </div>
+</section>
