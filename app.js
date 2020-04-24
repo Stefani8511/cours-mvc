@@ -35,12 +35,12 @@ const     app = express();
 app.use(methodOverride('_method'));
 
 //mongoose
-const db = require ("./config/keys").MongoURI
+// const db = require ("./config/keys").MongoURI
 
 mongoose
-.connect(db,
+.connect("mongodb://localhost:27017/imaginer",
  ({ useNewUrlParser: true , useUnifiedTopology: true, useCreateIndex: true }))
- .then(() => console.log("Connecter à Mongo Cloud"))
+ .then(() => console.log("Connecter à Mongo"))
  .catch(err => console.log(err))
 
 //connect-mongo
